@@ -145,7 +145,3 @@ Este proyecto constituye el tercer volumen del tríptico de sabiduría perenne:
 * **Ética Contemplativa:** Sin modelos de suscripción, anuncios ni patrones oscuros orientados a la adicción en pantalla.
 
 ---
-
-## 📄 Licencia
-
-Publicado bajo la Licencia **MIT**. Consulta el archivo `LICENSE` para más información. Eres libre de estudiar, bifurcar, modificar y distribuir este proyecto.
