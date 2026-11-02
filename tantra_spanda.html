@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TANTRA · SPANDA | El Tejido del Reconocimiento Vivo</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes tipográficas clásicas con respaldo seguro del sistema -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', '"Palatino Linotype"', 'serif'],
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            obsidian: {
+              950: '#0a0c13',
+              900: '#0d0f17',
+              850: '#151821',
+              800: '#1b1f2b',
+              700: '#272d3e',
+            },
+            parchment: {
+              100: '#f7f4ec',
+              200: '#e8e2d4',
+              300: '#d1c8b8',
+              400: '#a39b8b',
+            },
+            gold: {
+              400: '#f7c873',
+              500: '#f0b75e',
+              600: '#e09f3e',
+              700: '#be7e29',
+            },
+            ruby: {
+              400: '#f07189',
+              500: '#e25c75',
+              700: '#b0324a',
+              900: '#541522',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Variables de diseño de alto contraste y legibilidad */
+    :root {
+      --bg-dark: #0d0f17;
+      --bg-card: rgba(21, 24, 33, 0.92);
+      --text-main: #f7f4ec;
+      --text-sub: #d1c8b8;
+      --gold-accent: #f0b75e;
+      --border-subtle: rgba(240, 183, 94, 0.2);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    /* Tarjetas con efecto vidrio ahumado y relieve dorado */
+    .tantra-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(14px);
+    }
+
+    .tantra-glow {
+      box-shadow: 0 0 25px rgba(240, 183, 94, 0.15);
+    }
+
+    /* Píldora de navegación activa */
+    .tab-active {
+      background: linear-gradient(135deg, rgba(240, 183, 94, 0.22) 0%, rgba(226, 92, 117, 0.2) 100%) !important;
+      border-color: rgba(240, 183, 94, 0.6) !important;
+      color: #f7c873 !important;
+      box-shadow: 0 0 16px rgba(240, 183, 94, 0.25);
+    }
+
+    /* Scrollbar sutil color bronce */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0d0f17;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(240, 183, 94, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(240, 183, 94, 0.65);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col bg-obsidian-900 text-parchment-100 antialiased selection:bg-gold-500/30 selection:text-gold-400">
+
+  <!-- ================= NOTIFICACIÓN TOAST SUTIL ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-obsidian-850 text-parchment-100 border border-gold-500/50 px-5 py-3 rounded-2xl shadow-2xl text-xs font-medium flex items-center space-x-3 shadow-gold-500/20">
+    <span id="toast-icon" class="text-base">🔱</span>
+    <span id="toast-msg">Pulsación viva</span>
+  </div>
+
+  <!-- ================= ENCABEZADO Y SELECTOR DE TRILOGÍA ================= -->
+  <header class="border-b border-obsidian-800 bg-obsidian-950/95 backdrop-blur-md sticky top-0 z-40">
+    
+    <!-- Barra Superior: Tríptico Filosófico -->
+    <div class="border-b border-obsidian-800/80 bg-obsidian-900/90 py-1 px-4 text-center">
+      <div class="max-w-6xl mx-auto flex items-center justify-between text-[11px] font-cinzel text-parchment-300 tracking-wider">
+        <span class="hidden md:inline text-parchment-400 font-semibold">Trilogía Contemplativa</span>
+        <div class="flex items-center space-x-3 sm:space-x-5 mx-auto md:mx-0">
+          <a href="../sutra-yoga/" class="opacity-70 hover:opacity-100 hover:text-gold-400 transition flex items-center space-x-1">
+            <span>Vol. I · Sūtra Yoga</span>
+          </a>
+          <span class="text-obsidian-700">✦</span>
+          <a href="../sutra-dharma/" class="opacity-70 hover:opacity-100 hover:text-gold-400 transition flex items-center space-x-1">
+            <span>Vol. II · Dharma</span>
+          </a>
+          <span class="text-obsidian-700">✦</span>
+          <span class="text-gold-400 font-bold border-b border-gold-500 pb-0.5">Vol. III · Tantra Spanda</span>
+        </div>
+        <span class="hidden md:inline text-gold-500/80 text-[10px]">Śaivismo No Dual</span>
+      </div>
+    </div>
+
+    <!-- Barra Principal -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+      
+      <!-- Marca / Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="switchTab('daily')">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-ruby-900 via-obsidian-800 to-obsidian-850 border border-gold-500/40 flex items-center justify-center text-gold-400 font-cinzel font-bold text-lg shadow-lg">
+          🔱
+        </div>
+        <div>
+          <span class="font-cinzel tracking-widest text-base sm:text-lg font-bold text-parchment-100 block leading-tight">TANTRA · SPANDA</span>
+          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase text-gold-400 font-medium">El Tejido del Reconocimiento</span>
+        </div>
+      </div>
+
+      <!-- Menú Desktop Píldoras -->
+      <nav class="hidden lg:flex items-center space-x-1.5 text-xs font-semibold tracking-wider uppercase font-cinzel">
+        <button onclick="switchTab('daily')" id="nav-daily" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          Dhāraṇā
+        </button>
+        <button onclick="switchTab('alchemy')" id="nav-alchemy" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          Alquimia (Saṅkoca)
+        </button>
+        <button onclick="switchTab('sandhi')" id="nav-sandhi" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          Umbrales (Aliento)
+        </button>
+        <button onclick="switchTab('doors')" id="nav-doors" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          5 Puertas
+        </button>
+        <button onclick="switchTab('journal')" id="nav-journal" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          Diario
+        </button>
+        <button onclick="switchTab('compendium')" id="nav-compendium" class="nav-btn px-3 py-2 rounded-xl text-parchment-300 hover:text-gold-400 border border-transparent transition">
+          Compendio
+        </button>
+      </nav>
+
+      <!-- Contador Fuego Spanda & Tanpura Rápida -->
+      <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+        <!-- Fuego acumulado -->
+        <div class="flex items-center space-x-1.5 bg-obsidian-850 border border-gold-500/30 px-3 py-1.5 rounded-full text-xs" title="Fuego Spanda encarnado continuamente">
+          <span class="text-gold-400 animate-pulse">🔥</span>
+          <span class="font-semibold text-parchment-200" id="streak-counter">0 fuegos</span>
+        </div>
+
+        <!-- Botón rápido Tanpura Audio -->
+        <button onclick="toggleTanpuraSound()" id="quick-tanpura-btn" class="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-gold-500/40 bg-obsidian-850 hover:bg-gold-500/10 text-gold-400 text-xs font-cinzel flex items-center space-x-1.5" title="Activar/Pausar Tanpura continua">
+          <span id="tanpura-icon">🪕</span>
+          <span class="hidden sm:inline" id="tanpura-btn-text">Tanpura</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú Móvil Desplazable Horizontalmente -->
+    <div class="flex lg:hidden overflow-x-auto px-4 py-2 space-x-2 border-t border-obsidian-800 text-xs uppercase font-cinzel font-semibold no-scrollbar">
+      <button onclick="switchTab('daily')" id="mob-nav-daily" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">Dhāraṇā</button>
+      <button onclick="switchTab('alchemy')" id="mob-nav-alchemy" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">Alquimia</button>
+      <button onclick="switchTab('sandhi')" id="mob-nav-sandhi" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">Umbrales</button>
+      <button onclick="switchTab('doors')" id="mob-nav-doors" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">5 Puertas</button>
+      <button onclick="switchTab('journal')" id="mob-nav-journal" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">Diario</button>
+      <button onclick="switchTab('compendium')" id="mob-nav-compendium" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-obsidian-850 border border-transparent">Compendio</button>
+    </div>
+  </header>
+
+  <!-- ================= CONTENEDOR PRINCIPAL ================= -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- ================= SECCIÓN 1: DHĀRAṆĀ VIVA (PRÁCTICA DEL DÍA) ================= -->
+    <section id="view-daily" class="view-content space-y-8">
+      
+      <!-- Introducción Clara -->
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Puerta de Reconocimiento</span>
+        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-parchment-100">Nada que Rechazar, Nada que Buscar</h1>
+        <p class="text-sm text-parchment-300">
+          El Tantra no-dual no te pide aislarte del mundo, sino reconocer que la Consciencia Divina (*Śiva*) danza como cada sensación, emoción y latido de tu existencia (*Śakti*).
+        </p>
+      </div>
+
+      <!-- Tarjeta Principal de la Dhāraṇā -->
+      <div class="tantra-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        
+        <!-- Indicador de Fuente & Alternar -->
+        <div class="flex items-center justify-between border-b border-obsidian-700/80 pb-4 mb-6">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-1 rounded-md text-xs font-cinzel font-bold bg-ruby-950/80 border border-ruby-700/50 text-ruby-400" id="daily-source-tag">
+              Vijñāna Bhairava 24
+            </span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-parchment-400" id="daily-cycle-tag">
+              Dhāraṇā 1 · Prāṇa & Apāna
+            </span>
+          </div>
+
+          <button onclick="pickRandomDharana()" class="text-xs text-parchment-300 hover:text-gold-400 flex items-center space-x-1.5 bg-obsidian-800/80 px-3 py-1.5 rounded-xl border border-obsidian-700 hover:border-gold-500/40 transition" title="Explorar otra enseñanza">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Inspirar otra</span>
+          </button>
+        </div>
+
+        <!-- Verso en Sánscrito y Traducción -->
+        <div class="space-y-4 text-center my-6">
+          <div class="text-2xl sm:text-3xl font-serif text-parchment-100 tracking-wide italic font-normal" id="daily-sanskrit">
+            ūrdhve prāṇo hy adho jīvo visargātmā paroccaret |
+          </div>
+          <div class="text-xs tracking-widest text-gold-400/80 font-mono" id="daily-phonetic">
+            [ uurdhve praano hy adho jeevo visargaatmaa paroccharet ]
+          </div>
+          <div class="text-xl sm:text-2xl font-serif text-gold-400 font-semibold max-w-2xl mx-auto pt-2 leading-relaxed" id="daily-translation">
+            «La energía vital asciende al inhalar y desciende al exhalar. En los dos puntos donde el aliento se detiene, descansa la Suprema Consciencia.»
+          </div>
+        </div>
+
+        <!-- Clave Tántrica y Micro-Práctica -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-obsidian-700/80">
+          
+          <div class="bg-obsidian-850/80 p-5 rounded-2xl border border-obsidian-700">
+            <h4 class="text-xs font-bold tracking-widest uppercase text-gold-400 font-cinzel flex items-center space-x-2 mb-2">
+              <span>👁️</span>
+              <span>La Clave No Dual (Sin Renuncia)</span>
+            </h4>
+            <p class="text-sm leading-relaxed text-parchment-200" id="daily-insight">
+              No necesitas detener la respiración ni forzar el cuerpo. El secreto tántrico radica en la atención lúcida en el giro natural donde un aliento muere y el otro aún no ha nacido: en ese intersticio resplandece Bhairava (la Consciencia Infinita).
+            </p>
+          </div>
+
+          <div class="bg-ruby-950/30 p-5 rounded-2xl border border-ruby-900/40">
+            <h4 class="text-xs font-bold tracking-widest uppercase text-ruby-400 font-cinzel flex items-center space-x-2 mb-2">
+              <span>⚡</span>
+              <span>Micro-Práctica Inmediata</span>
+            </h4>
+            <p class="text-sm leading-relaxed text-parchment-200" id="daily-practice">
+              En este momento, sin modificar tu respiración, posa toda tu atención en la milésima de segundo en que termina tu exhalación y antes de volver a tomar aire. Permanece en ese espacio sin tiempo.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+          <button id="btn-mark-lived" onclick="markLivedToday()" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-obsidian-950 font-cinzel font-bold text-xs tracking-wider flex items-center justify-center space-x-2 shadow-lg transition">
+            <span class="text-base">🔥</span>
+            <span id="btn-lived-text">He encarnado esta práctica hoy</span>
+          </button>
+
+          <div class="flex items-center space-x-3 w-full sm:w-auto">
+            <button onclick="openTantraNoteModal()" class="w-full sm:w-auto px-4 py-3 rounded-2xl border border-gold-500/30 bg-obsidian-850 hover:bg-obsidian-800 text-xs font-cinzel tracking-wider font-semibold text-parchment-200 flex items-center justify-center space-x-2">
+              <span>✍️</span>
+              <span>Ofrendar al Fuego Interior</span>
+            </button>
+            <button onclick="shareDharana()" class="px-4 py-3 rounded-2xl border border-obsidian-700 bg-obsidian-850 hover:bg-obsidian-800 text-xs text-parchment-300 flex items-center justify-center" title="Copiar Dhāraṇā al portapapeles">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tríada Tántrica: Spanda, Camatkāra & Samāveśa -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div class="p-5 rounded-2xl tantra-card">
+          <div class="text-gold-400 font-cinzel text-xl font-bold mb-1">Spanda</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-parchment-400 mb-1">La Pulsación Primordial</div>
+          <p class="text-xs text-parchment-300">Toda vibración, alegría o dolor es la danza rítmica de la Consciencia creadora.</p>
+        </div>
+        <div class="p-5 rounded-2xl tantra-card">
+          <div class="text-gold-400 font-cinzel text-xl font-bold mb-1">Camatkāra</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-parchment-400 mb-1">El Asombro Estético</div>
+          <p class="text-xs text-parchment-300">Degustar cada experiencia sensorial sin el filtro de la queja habitual del ego.</p>
+        </div>
+        <div class="p-5 rounded-2xl tantra-card">
+          <div class="text-gold-400 font-cinzel text-xl font-bold mb-1">Samāveśa</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-parchment-400 mb-1">Inmersión Absoluta</div>
+          <p class="text-xs text-parchment-300">Disolver la ilusión de separación y fundirse en la Presencia en este mismo cuerpo.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 2: ALQUIMIA SAṄKOCA → VIKĀSA ================= -->
+    <section id="view-alchemy" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Pratyabhijñāhṛdaya 18</span>
+        <h2 class="text-3xl font-serif font-bold text-parchment-100">Alquimia de la Contracción</h2>
+        <p class="text-sm text-parchment-300">
+          En el Tantra, la contracción (*Saṅkoca*: miedo, ira, celos, culpa) no es un pecado ni un error: es energía divina concentrada esperando ser liberada en expansión (*Vikāsa*).
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto tantra-card rounded-3xl p-6 sm:p-8 space-y-6">
+        
+        <!-- Pasos Alquímicos -->
+        <div class="grid grid-cols-3 gap-2 border-b border-obsidian-700 pb-4">
+          <button onclick="setAlchemyStep(1)" id="alc-step-btn-1" class="py-2 text-xs font-cinzel font-bold border-b-2 border-gold-500 text-gold-400">
+            1. Sentir la Contracción
+          </button>
+          <button onclick="setAlchemyStep(2)" id="alc-step-btn-2" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-parchment-400">
+            2. Despojar la Historia
+          </button>
+          <button onclick="setAlchemyStep(3)" id="alc-step-btn-3" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-parchment-400">
+            3. Expansión en el Corazón
+          </button>
+        </div>
+
+        <!-- Paso 1: Sentir -->
+        <div id="alc-step-1" class="space-y-4">
+          <div class="border-l-4 border-ruby-500 pl-4 py-1">
+            <h3 class="font-bold text-base text-parchment-100">Paso 1: Localiza el nudo físico sin juzgarlo</h3>
+            <p class="text-xs text-parchment-400">¿Dónde se manifiesta la tensión en este instante? (pecho, garganta, estómago, mandíbula)</p>
+          </div>
+          <textarea id="alc-input-body" rows="3" class="w-full bg-obsidian-850 border border-obsidian-700 rounded-2xl p-4 text-sm text-parchment-100 placeholder-parchment-400 focus:outline-none focus:border-gold-500 resize-none" placeholder="Ejemplo: Siento un peso punzante en el centro del pecho y calor en la garganta tras una conversación difícil..."></textarea>
+          
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="text-parchment-400 self-center">Atajos de sensación:</span>
+            <button onclick="setRawSens('Opresión densa en el pecho y latido acelerado')" class="px-2.5 py-1 bg-obsidian-800 rounded-lg text-parchment-300 hover:text-gold-400">Opresión Pecho</button>
+            <button onclick="setRawSens('Nudo contraído en el estómago y estómago cerrado')" class="px-2.5 py-1 bg-obsidian-800 rounded-lg text-parchment-300 hover:text-gold-400">Nudo Estómago</button>
+            <button onclick="setRawSens('Mandíbula apretada y tensión en la frente')" class="px-2.5 py-1 bg-obsidian-800 rounded-lg text-parchment-300 hover:text-gold-400">Mandíbula / Rostro</button>
+          </div>
+
+          <div class="flex justify-end pt-3">
+            <button onclick="setAlchemyStep(2)" class="px-6 py-2.5 bg-gold-600 hover:bg-gold-500 text-obsidian-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">
+              Pasar a Despojar la Historia →
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 2: Despojar -->
+        <div id="alc-step-2" class="space-y-4 hidden">
+          <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <h3 class="font-bold text-base text-parchment-100">Paso 2: Retira el relato egóico de culpables y agravios</h3>
+            <p class="text-xs text-parchment-400">El sufrimiento reside en la historia mental; la energía cruda es pura potencia creadora (*Śakti*).</p>
+          </div>
+
+          <div class="bg-obsidian-850 p-4 rounded-2xl border border-obsidian-700 text-xs text-parchment-200 space-y-2">
+            <p class="italic">«Suelta las frases: 'no debería pasarme esto', 'él tiene la culpa', 'no soy capaz'.»</p>
+            <p>Mira la sensación física como simple electricidad biológica: una vibración intensa sin etiqueta moral.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase font-cinzel font-bold text-parchment-400 mb-1">Afirmación de Desidentificación:</label>
+            <input type="text" id="alc-input-strip" value="Renuncio a alimentar la narrativa mental y permanezco con la energía viva en mi cuerpo." class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl p-3 text-sm text-parchment-100 focus:outline-none focus:border-gold-500">
+          </div>
+
+          <div class="flex justify-between pt-3">
+            <button onclick="setAlchemyStep(1)" class="px-4 py-2 border border-obsidian-700 rounded-xl text-xs font-cinzel text-parchment-300">
+              ← Atrás
+            </button>
+            <button onclick="setAlchemyStep(3)" class="px-6 py-2.5 bg-gold-600 hover:bg-gold-500 text-obsidian-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">
+              Abrir el Espacio (Vikāsa) →
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 3: Expansión -->
+        <div id="alc-step-3" class="space-y-4 hidden">
+          <div class="border-l-4 border-ruby-400 pl-4 py-1">
+            <h3 class="font-bold text-base text-parchment-100">Paso 3: Vikāsa · El Fuego de la Ofrenda</h3>
+            <p class="text-xs text-parchment-400">Respira profundamente hacia el corazón y siente cómo la energía se expande en todas direcciones.</p>
+          </div>
+
+          <div class="bg-gradient-to-tr from-ruby-950/40 via-obsidian-850 to-obsidian-850 p-5 rounded-2xl border border-gold-500/30 text-xs space-y-2">
+            <span class="font-cinzel font-bold text-gold-400 uppercase tracking-wider">Revelación Tántrica:</span>
+            <p id="alc-summary-text" class="text-parchment-200">
+              La contracción se disuelve en el océano del Corazón (*Hṛdaya*). La energía que parecía destruirte es ahora el combustible que enciende tu lucidez.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3">
+            <button onclick="setAlchemyStep(2)" class="w-full sm:w-auto px-4 py-2 border border-obsidian-700 rounded-xl text-xs font-cinzel text-parchment-300">
+              ← Atrás
+            </button>
+            <button onclick="saveAlchemyEntry()" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-ruby-700 to-ruby-600 hover:from-ruby-600 hover:to-ruby-500 text-parchment-100 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider shadow-lg">
+              🔱 Consagrar en el Diario
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 3: UMBRALES DEL ALIENTO (SANDHI DHYĀNA) ================= -->
+    <section id="view-sandhi" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Vijñāna Bhairava Tantra · Dhāraṇās 1 & 2</span>
+        <h2 class="text-3xl font-serif font-bold text-parchment-100">Los Dos Umbrales Sagrados</h2>
+        <p class="text-sm text-parchment-300">
+          En el momento exacto en que termina la inhalación y antes de exhalar; y en el momento exacto en que cesa la exhalación y antes de inhalar: allí reside la paz inmóvil del Ser.
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto tantra-card rounded-3xl p-6 sm:p-10 text-center relative space-y-6">
+        
+        <!-- Orbe Visual del Aliento Tántrico -->
+        <div class="relative w-64 h-64 mx-auto my-4 flex items-center justify-center">
+          <!-- Anillo místico de pulsación -->
+          <div class="absolute inset-0 rounded-full border border-dashed border-gold-500/30 animate-spin" style="animation-duration: 45s;"></div>
+          <div id="sandhi-glow" class="absolute w-44 h-44 rounded-full bg-gold-500/10 blur-2xl transition-all duration-1000"></div>
+          
+          <!-- Orbe Central -->
+          <div id="sandhi-orb" class="w-32 h-32 rounded-full bg-gradient-to-tr from-ruby-900 via-obsidian-800 to-gold-600/80 border border-gold-400/50 flex flex-col items-center justify-center text-parchment-100 shadow-2xl transition-transform duration-1000">
+            <span id="sandhi-phase" class="font-cinzel text-sm font-bold tracking-wider text-gold-400">Centro</span>
+            <span id="sandhi-counter" class="text-2xl font-serif font-bold text-parchment-100">0s</span>
+          </div>
+        </div>
+
+        <!-- Instrucción de la Fase Activa -->
+        <div class="space-y-1">
+          <div id="sandhi-instruction" class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-semibold">
+            Presiona Iniciar para sincronizar el aliento
+          </div>
+          <div id="sandhi-cycle-count" class="text-xs text-parchment-400">
+            Ciclos completados: 0
+          </div>
+        </div>
+
+        <!-- Controles de Respiración y Tanpura -->
+        <div class="flex items-center justify-center space-x-3 pt-2">
+          <button id="sandhi-start-btn" onclick="toggleSandhiSession()" class="px-8 py-3 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-obsidian-950 font-cinzel font-bold rounded-2xl text-xs uppercase tracking-widest shadow-lg">
+            Iniciar Práctica
+          </button>
+          
+          <button onclick="toggleTanpuraSound()" id="sandhi-tanpura-btn" class="p-3 border border-gold-500/40 rounded-2xl bg-obsidian-850 hover:bg-obsidian-800 text-gold-400 text-xs font-cinzel" title="Tanpura continua en bucle">
+            🪕 Tanpura
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 4: LAS 5 PUERTAS SENSORIALES ================= -->
+    <section id="view-doors" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Camatkāra · Las Puertas de Bhairava</span>
+        <h2 class="text-3xl font-serif font-bold text-parchment-100">El Asombro a Través de los Sentidos</h2>
+        <p class="text-sm text-parchment-300">
+          Los sentidos no son distracciones que debas mutilar; son las antenas vivas de la Consciencia para deleitarse en su propia creación.
+        </p>
+      </div>
+
+      <!-- Tarjetas de las 5 Puertas -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Puerta 1: Nāda -->
+        <div class="tantra-card rounded-2xl p-5 space-y-3 border border-obsidian-700 hover:border-gold-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🔔</span>
+            <span class="text-[10px] font-cinzel font-bold text-gold-400 uppercase tracking-widest">Dhāraṇā 50 · VBT 73</span>
+          </div>
+          <h3 class="font-cinzel text-base font-bold text-parchment-100">1. Nāda (El Sonido)</h3>
+          <p class="text-xs text-parchment-300 leading-relaxed">
+            Escucha una cuerda o una campana. Cuando el sonido comience a desvanecerse en el silencio, sigue su eco y quédate reposando en la nada que lo recibe.
+          </p>
+          <button onclick="ringDoorChime(432)" class="w-full py-2 bg-obsidian-850 hover:bg-gold-500/20 border border-gold-500/30 rounded-xl text-xs font-cinzel text-gold-400 font-semibold">
+            Tocar Campana & Escuchar Eco
+          </button>
+        </div>
+
+        <!-- Puerta 2: Ākāśa -->
+        <div class="tantra-card rounded-2xl p-5 space-y-3 border border-obsidian-700 hover:border-gold-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🌌</span>
+            <span class="text-[10px] font-cinzel font-bold text-gold-400 uppercase tracking-widest">Dhāraṇā 9 · VBT 32</span>
+          </div>
+          <h3 class="font-cinzel text-base font-bold text-parchment-100">2. Ākāśa (El Espacio)</h3>
+          <p class="text-xs text-parchment-300 leading-relaxed">
+            Fija la mirada en el cielo despejado o en el espacio vacío entre los objetos de tu habitación. Deja que la mente adopte la naturaleza ilimitada del espacio.
+          </p>
+          <button onclick="showToast('Siente el espacio infinito que sostiene tu cuerpo', '🌌')" class="w-full py-2 bg-obsidian-850 hover:bg-gold-500/20 border border-gold-500/30 rounded-xl text-xs font-cinzel text-gold-400 font-semibold">
+            Fijar Espacio Abierto
+          </button>
+        </div>
+
+        <!-- Puerta 3: Sparśa -->
+        <div class="tantra-card rounded-2xl p-5 space-y-3 border border-obsidian-700 hover:border-gold-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🍃</span>
+            <span class="text-[10px] font-cinzel font-bold text-gold-400 uppercase tracking-widest">Dhāraṇā 45 · VBT 68</span>
+          </div>
+          <h3 class="font-cinzel text-base font-bold text-parchment-100">3. Sparśa (El Contacto)</h3>
+          <p class="text-xs text-parchment-300 leading-relaxed">
+            Siente el roce del aire sobre tu piel, el peso de tu ropa o la brisa en tu cara. Reconoce que la piel no es una barrera, sino una caricia continua del cosmos.
+          </p>
+          <button onclick="showToast('Siente tu piel como frontera viva del universo', '🍃')" class="w-full py-2 bg-obsidian-850 hover:bg-gold-500/20 border border-gold-500/30 rounded-xl text-xs font-cinzel text-gold-400 font-semibold">
+            Sentir la Caricia
+          </button>
+        </div>
+
+        <!-- Puerta 4: Rasa -->
+        <div class="tantra-card rounded-2xl p-5 space-y-3 border border-obsidian-700 hover:border-gold-500/50 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🍯</span>
+            <span class="text-[10px] font-cinzel font-bold text-gold-400 uppercase tracking-widest">Dhāraṇā 49 · VBT 72</span>
+          </div>
+          <h3 class="font-cinzel text-base font-bold text-parchment-100">4. Rasa (El Sabor)</h3>
+          <p class="text-xs text-parchment-300 leading-relaxed">
+            Al beber agua o saborear un alimento, sumérgete por entero en el gozo del sabor puro (*Ānanda*), antes de que el pensamiento conceptual lo catalogue.
+          </p>
+          <button onclick="showToast('Degusta la dicha primaria del sabor puro', '🍯')" class="w-full py-2 bg-obsidian-850 hover:bg-gold-500/20 border border-gold-500/30 rounded-xl text-xs font-cinzel text-gold-400 font-semibold">
+            Activar la Dicha Estética
+          </button>
+        </div>
+
+        <!-- Puerta 5: Hṛdaya -->
+        <div class="tantra-card rounded-2xl p-5 space-y-3 border border-obsidian-700 hover:border-gold-500/50 transition md:col-span-2 lg:col-span-2">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🪷</span>
+            <span class="text-[10px] font-cinzel font-bold text-gold-400 uppercase tracking-widest">Dhāraṇā 15 · VBT 39</span>
+          </div>
+          <h3 class="font-cinzel text-base font-bold text-parchment-100">5. Hṛdaya (La Cueva del Corazón)</h3>
+          <p class="text-xs text-parchment-300 leading-relaxed">
+            Cierra los ojos y lleva la luz de la atención al centro del pecho. No al músculo cardíaco, sino a la caverna radiante de la Consciencia pura donde reside el Testigo inmutable.
+          </p>
+          <button onclick="ringDoorChime(528)" class="w-full py-2 bg-gradient-to-r from-ruby-900 via-obsidian-850 to-gold-600/30 hover:opacity-90 border border-gold-500/40 rounded-xl text-xs font-cinzel text-parchment-100 font-semibold">
+            Ofrendar la Atención al Corazón 🪷
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 5: DIARIO DE RECONOCIMIENTO ================= -->
+    <section id="view-journal" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Pratyabhijñā · La Memoria del Ser</span>
+        <h2 class="text-3xl font-serif font-bold text-parchment-100">El Registro del Fuego Interior</h2>
+        <p class="text-sm text-parchment-300">
+          Inmortaliza los momentos en que la ilusión de separación se disuelve y recuerdas tu verdadera naturaleza ilimitada.
+        </p>
+      </div>
+
+      <!-- Formulario para Nueva Entrada -->
+      <div class="tantra-card rounded-3xl p-6 sm:p-8 space-y-5">
+        <h3 class="font-cinzel text-base font-bold border-b border-obsidian-700 pb-3 flex items-center justify-between text-parchment-100">
+          <span>Nueva Ofrenda de Reconocimiento</span>
+          <span class="text-xs font-sans font-normal text-parchment-400" id="journal-current-date">Hoy</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase font-cinzel font-bold text-parchment-300 mb-1">Momento / Situación Detonante</label>
+            <input type="text" id="tantra-situation" placeholder="Ej: Mirando la lluvia / Tras una discusión..." class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl px-4 py-2.5 text-sm text-parchment-100 focus:outline-none focus:border-gold-500">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-cinzel font-bold text-parchment-300 mb-1">Sello Tántrico</label>
+            <select id="tantra-seal" class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl px-3 py-2.5 text-sm text-parchment-100 focus:outline-none focus:border-gold-500">
+              <option value="Spanda (Pulsación Viva)">Spanda (Pulsación y energía viva)</option>
+              <option value="Camatkāra (Asombro Estético)">Camatkāra (Asombro sensorial sin juicio)</option>
+              <option value="Hṛdaya (Reposo en el Corazón)">Hṛdaya (Reposo en el centro del pecho)</option>
+              <option value="Samāveśa (Inmersión Plena)">Samāveśa (Disolución del observador)</option>
+              <option value="Homa (Alquimia / Ofrenda)">Homa (Contracción transmutada en luz)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-cinzel font-bold text-ruby-400 mb-1">Contracción o Sensación Cruda Observada</label>
+          <textarea id="tantra-raw" rows="2" placeholder="¿Qué agitación o emoción densa se manifestó?" class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl p-3 text-sm text-parchment-100 focus:outline-none focus:border-ruby-500 resize-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-cinzel font-bold text-gold-400 mb-1">Reconocimiento Luminoso (*Pratyabhijñā*)</label>
+          <textarea id="tantra-insight" rows="2" placeholder="¿Cómo reconoció la Consciencia su propia libertad en medio de la forma?" class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl p-3 text-sm text-parchment-100 focus:outline-none focus:border-gold-500 resize-none"></textarea>
+        </div>
+
+        <div class="flex justify-end pt-2">
+          <button onclick="saveTantraEntryManual()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 text-obsidian-950 font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg">
+            Registrar Ofrenda
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros y Descarga -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4">
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <input type="text" id="journal-search" oninput="renderTantraEntries()" placeholder="Buscar en ofrendas..." class="bg-obsidian-850 border border-obsidian-700 rounded-xl px-4 py-2 text-xs text-parchment-100 focus:outline-none focus:border-gold-500 w-full sm:w-64">
+        </div>
+        <div class="flex items-center space-x-2 w-full sm:w-auto justify-end">
+          <button onclick="exportTantraJSON()" class="px-3 py-2 border border-obsidian-700 rounded-xl text-xs font-cinzel text-parchment-300 hover:text-gold-400 hover:bg-obsidian-850">
+            Exportar JSON
+          </button>
+          <button onclick="exportTantraTXT()" class="px-3 py-2 border border-obsidian-700 rounded-xl text-xs font-cinzel text-parchment-300 hover:text-gold-400 hover:bg-obsidian-850">
+            Descargar Texto
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista Histórica de Entradas -->
+      <div id="journal-entries-container" class="space-y-4">
+        <!-- Generado por JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 6: COMPENDIO DE DHĀRAṆĀS ================= -->
+    <section id="view-compendium" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-gold-400 font-cinzel font-bold">Vijñāna Bhairava & Śiva Sūtras</span>
+        <h2 class="text-3xl font-serif font-bold text-parchment-100">Compendio del Tejido Sagrado</h2>
+        <p class="text-sm text-parchment-300">
+          Explora las vías clásicas de reconocimiento no-dual clasificadas por puertas de entrada.
+        </p>
+      </div>
+
+      <!-- Categorías de Filtrado -->
+      <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+        <button onclick="filterCompendium('all')" class="comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-gold-500/40 bg-gold-500 text-obsidian-950" data-cat="all">Todos</button>
+        <button onclick="filterCompendium('aliento')" class="comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-obsidian-700 text-parchment-300 hover:border-gold-500/40" data-cat="aliento">Aliento & Umbrales</button>
+        <button onclick="filterCompendium('sentidos')" class="comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-obsidian-700 text-parchment-300 hover:border-gold-500/40" data-cat="sentidos">Sentidos & Camatkāra</button>
+        <button onclick="filterCompendium('mente')" class="comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-obsidian-700 text-parchment-300 hover:border-gold-500/40" data-cat="mente">Espacio & Vacío</button>
+        <button onclick="filterCompendium('esencia')" class="comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-obsidian-700 text-parchment-300 hover:border-gold-500/40" data-cat="esencia">Pulsación (Spanda)</button>
+      </div>
+
+      <!-- Buscador en Vivo -->
+      <div class="max-w-md mx-auto">
+        <input type="text" id="comp-search-box" oninput="searchCompendium()" placeholder="Buscar por sánscrito, traducción o práctica..." class="w-full bg-obsidian-850 border border-obsidian-700 rounded-2xl px-4 py-2.5 text-xs text-parchment-100 focus:outline-none focus:border-gold-500">
+      </div>
+
+      <!-- Parrilla de Dhāraṇās -->
+      <div id="compendium-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
+        <!-- Renderizado por JavaScript -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL DE NOTA RÁPIDA ================= -->
+  <div id="modal-note" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden">
+    <div class="tantra-card w-full max-w-lg rounded-3xl p-6 shadow-2xl space-y-4 border border-gold-500/40">
+      <div class="flex items-center justify-between border-b border-obsidian-700 pb-3">
+        <h3 class="font-cinzel text-base font-bold text-parchment-100">Ofrenda al Fuego del Corazón</h3>
+        <button onclick="closeTantraNoteModal()" class="text-parchment-400 hover:text-gold-400 text-xl font-bold">&times;</button>
+      </div>
+      <p class="text-xs text-parchment-300" id="modal-dharana-ref">
+        Consagrado a la Dhāraṇā activa.
+      </p>
+      <textarea id="modal-quick-text" rows="4" class="w-full bg-obsidian-850 border border-obsidian-700 rounded-xl p-3 text-sm text-parchment-100 focus:outline-none focus:border-gold-500 resize-none" placeholder="¿Qué verdad ha desvelado la Consciencia en tu experiencia viva?"></textarea>
+      
+      <div class="flex justify-end space-x-2 pt-2">
+        <button onclick="closeTantraNoteModal()" class="px-4 py-2 border border-obsidian-700 rounded-xl text-xs font-cinzel text-parchment-300">Cancelar</button>
+        <button onclick="saveModalTantraNote()" class="px-5 py-2 bg-gold-600 hover:bg-gold-500 text-obsidian-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">Consagrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="border-t border-obsidian-800 mt-12 py-8 text-center text-xs text-parchment-400">
+    <div class="max-w-4xl mx-auto px-4 space-y-2">
+      <div class="font-cinzel text-gold-400 text-sm">
+        «Caitanyam Ātmā» — La Consciencia Pura es el Ser Supremo (Śiva Sūtras 1.1)
+      </div>
+      <p class="text-[11px] text-parchment-400">TANTRA · SPANDA · 100% Nativo, sin dependencias, en honor a la libertad infinita del Corazón.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPT: LÓGICA Y SÍNTESIS TANPURA ================= -->
+  <script>
+    /* =====================================================================
+       BASE DE DATOS DE DHĀRAṆĀS TÁNTRICAS CLÁSICAS
+       ===================================================================== */
+    const DHARANAS_DATA = [
+      {
+        id: "vbt-24",
+        source: "Vijñāna Bhairava 24",
+        category: "aliento",
+        title: "El Giro Entre los Dos Alientos",
+        sanskrit: "ūrdhve prāṇo hy adho jīvo visargātmā paroccaret |",
+        phonetic: "uurdhve praano hy adho jeevo visargaatmaa paroccharet",
+        translation: "La energía vital asciende al inhalar y desciende al exhalar. En los dos puntos donde el aliento se detiene, descansa la Suprema Consciencia.",
+        insight: "No necesitas forzar la respiración: el secreto reside en la atención lúcida en el milimétrico umbral donde un aliento cesa y el otro aún no ha nacido.",
+        practice: "Al exhalar, no te apresures a inhalar de inmediato. Descansa 2 segundos en el vacío sin miedo; reconoce la paz que ya está allí."
+      },
+      {
+        id: "vbt-32",
+        source: "Vijñāna Bhairava 32",
+        category: "mente",
+        title: "Disolución en el Espacio Abierto",
+        sanskrit: "śikhipakṣaiś citrarūpair maṇḍalair śūnyatāṁ vrajet |",
+        phonetic: "shikhi-pakshaish chitra-ruupair mandalaair shuunyataam vrajet",
+        translation: "Fijando la mirada en el espacio vacío, desprovisto de puntos de apoyo, la mente se disuelve en la inmensidad original.",
+        insight: "Los objetos y pensamientos surgen dentro del Espacio. Cuando dejas de perseguir los objetos y contemplas el espacio que los contiene, tú te conviertes en ese Espacio.",
+        practice: "Mira hacia una pared desnuda o al cielo abierto durante 1 minuto. Deja que los ojos se relajen y siente que el espacio te respira a ti."
+      },
+      {
+        id: "spanda-1-1",
+        source: "Spanda Kārikā 1.1",
+        category: "esencia",
+        title: "La Pulsación que Crea y Reabsorbe",
+        sanskrit: "yasyonmeṣanimeṣābhyāṁ jagataḥ pralayodayau |",
+        phonetic: "yasyon-mesha-nimeshaabhyaam jagatah pralayodayau",
+        translation: "Aquel por cuya apertura y cierre de ojos los mundos emergen y se disuelven: a esa fuente de pulsación rindo reverencia.",
+        insight: "Tus estados de ánimo, alegrías y tristezas no son fallos: son el parpadeo de la Consciencia Divina. Cuando aceptas la contracción como parte del latido, el sufrimiento cesa.",
+        practice: "Hoy, cuando sientas desánimo o contracción, no intentes arreglarlo de inmediato. Di: 'Este es el reposo de la pulsación, pronto vendrá la expansión'."
+      },
+      {
+        id: "siva-1-1",
+        source: "Śiva Sūtras 1.1",
+        category: "esencia",
+        title: "La Naturaleza del Ser",
+        sanskrit: "caitanyam ātmā |",
+        phonetic: "chaitanyam aatmaa",
+        translation: "La Consciencia pura, despierta y libre, es el verdadero Ser.",
+        insight: "Tú no eres el cuerpo que envejece ni la mente que calcula: eres el principio luminoso consciente que hace posible percibir el cuerpo y el pensamiento.",
+        practice: "Haz una pausa en tu quehacer y pregúntate en silencio: '¿Quién es el que se da cuenta de este instante?'. Quédate en el testigo silencioso."
+      },
+      {
+        id: "siva-1-12",
+        source: "Śiva Sūtras 1.12",
+        category: "sentidos",
+        title: "El Asombro como Fundamento",
+        sanskrit: "vismayo yogabhūmikā |",
+        phonetic: "vismayo yoga-bhuumikaa",
+        translation: "El asombro extático es la verdadera base de la unión espiritual.",
+        insight: "El aburrimiento es ceguera del ego. Para el sabio tántrico, una brizna de hierba, el sabor de una fruta o el rostro de un desconocido son milagros continuos.",
+        practice: "Mira el próximo objeto ordinario con el que te cruces (una taza, tus manos, una puerta) como si lo vieras por primera vez en toda tu vida."
+      },
+      {
+        id: "prat-18",
+        source: "Pratyabhijñāhṛdaya 18",
+        category: "aliento",
+        title: "La Alquimia de la Contracción",
+        sanskrit: "saṅkocasaṅkocanena citsvarūpāpatyā... |",
+        phonetic: "sankoca-sankocanena chit-svaruupaapatyaa",
+        translation: "Al encoger y liberar la propia contracción, uno se establece en la Consciencia Suprema.",
+        insight: "Cuando surge la angustia, no huyas a distracciones mentales. Sumérgete en el núcleo sensorial de la contracción y descubrirás que es puro fuego divino.",
+        practice: "Ubica la tensión física de hoy. Respira directamente hacia ella y susurra: 'Te reconozco como energía de la Consciencia. Eres bienvenida'."
+      },
+      {
+        id: "vbt-73",
+        source: "Vijñāna Bhairava 73",
+        category: "sentidos",
+        title: "La Inmersión en el Sonido y su Eco",
+        sanskrit: "tantryādivādyajñāneṣu dīrgheṣu kramasaṁsthiteḥ |",
+        phonetic: "tantryaadi-vaadya-jnyaaneshu deer-gheshu krama-samsthiteh",
+        translation: "Al escuchar atentamente el sonido prolongado de instrumentos de cuerda, uno entra en la infinita quietud del espacio sonoro.",
+        insight: "El sonido surge del silencio y regresa al silencio. Al rastrear el final de cualquier sonido hasta su disolución, la mente se sumerge en el reposo divino.",
+        practice: "Escucha el tañido de la campana en esta app o un sonido cercano hasta su última brizna audible. Reposa en el silencio que queda."
+      }
+    ];
+
+    /* =====================================================================
+       ESTADO Y PERSISTENCIA (LOCALSTORAGE)
+       ===================================================================== */
+    const STORAGE_KEY_JOURNAL = 'tantra_spanda_journal_v1';
+    const STORAGE_KEY_STREAK = 'tantra_spanda_streak_v1';
+    const STORAGE_KEY_ACTIVE = 'tantra_spanda_active_dharana_v1';
+
+    let currentDharana = DHARANAS_DATA[0];
+    let tantraEntries = [];
+    let practiceStreak = { count: 0, lastDate: null };
+    let currentCompFilter = 'all';
+
+    function initApp() {
+      // Cargar racha
+      try {
+        const savedStreak = localStorage.getItem(STORAGE_KEY_STREAK);
+        if (savedStreak) practiceStreak = JSON.parse(savedStreak);
+      } catch (e) { console.error(e); }
+      updateStreakDisplay();
+
+      // Cargar diario
+      try {
+        const savedJournal = localStorage.getItem(STORAGE_KEY_JOURNAL);
+        if (savedJournal) tantraEntries = JSON.parse(savedJournal);
+      } catch (e) { tantraEntries = []; }
+      renderTantraEntries();
+
+      // Cargar o elegir Dhāraṇā del día
+      try {
+        const savedId = localStorage.getItem(STORAGE_KEY_ACTIVE);
+        if (savedId) {
+          const found = DHARANAS_DATA.find(d => d.id === savedId);
+          if (found) currentDharana = found;
+        } else {
+          const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+          currentDharana = DHARANAS_DATA[dayOfYear % DHARANAS_DATA.length];
+        }
+      } catch (e) { currentDharana = DHARANAS_DATA[0]; }
+
+      renderCurrentDharana();
+      renderCompendium();
+
+      // Fecha en diario
+      const now = new Date();
+      document.getElementById('journal-current-date').textContent = now.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+    }
+
+    /* =====================================================================
+       NAVEGACIÓN ENTRE PESTAÑAS
+       ===================================================================== */
+    function switchTab(tabId) {
+      document.querySelectorAll('.view-content').forEach(view => view.classList.add('hidden'));
+      const activeView = document.getElementById(`view-${tabId}`);
+      if (activeView) activeView.classList.remove('hidden');
+
+      // Botones navegación desktop
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('tab-active'));
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) activeNav.classList.add('tab-active');
+
+      // Botones móvil
+      document.querySelectorAll('[id^="mob-nav-"]').forEach(btn => btn.classList.remove('tab-active'));
+      const activeMobNav = document.getElementById(`mob-nav-${tabId}`);
+      if (activeMobNav) activeMobNav.classList.add('tab-active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* =====================================================================
+       SISTEMA TOAST SUTIL
+       ===================================================================== */
+    let toastTimeout;
+    function showToast(msg, icon = '🔱') {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      document.getElementById('toast-icon').textContent = icon;
+
+      toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3500);
+    }
+
+    /* =====================================================================
+       DHĀRAṆĀ DEL DÍA
+       ===================================================================== */
+    function renderCurrentDharana() {
+      document.getElementById('daily-source-tag').textContent = currentDharana.source;
+      document.getElementById('daily-cycle-tag').textContent = currentDharana.title;
+      document.getElementById('daily-sanskrit').textContent = currentDharana.sanskrit;
+      document.getElementById('daily-phonetic').textContent = `[ ${currentDharana.phonetic} ]`;
+      document.getElementById('daily-translation').textContent = `«${currentDharana.translation}»`;
+      document.getElementById('daily-insight').textContent = currentDharana.insight;
+      document.getElementById('daily-practice').textContent = currentDharana.practice;
+
+      try {
+        localStorage.setItem(STORAGE_KEY_ACTIVE, currentDharana.id);
+      } catch (e) {}
+      checkIfLivedToday();
+    }
+
+    function pickRandomDharana() {
+      const others = DHARANAS_DATA.filter(d => d.id !== currentDharana.id);
+      currentDharana = others[Math.floor(Math.random() * others.length)];
+      renderCurrentDharana();
+      showToast(`Nueva Dhāraṇā revelada: ${currentDharana.source}`);
+    }
+
+    function setDharanaById(id) {
+      const found = DHARANAS_DATA.find(d => d.id === id);
+      if (found) {
+        currentDharana = found;
+        renderCurrentDharana();
+        switchTab('daily');
+        showToast(`Dhāraṇā fijada para el día: ${currentDharana.source}`);
+      }
+    }
+
+    function checkIfLivedToday() {
+      const today = new Date().toISOString().split('T')[0];
+      const isLived = practiceStreak.lastDate === today;
+      const btn = document.getElementById('btn-mark-lived');
+      const txt = document.getElementById('btn-lived-text');
+
+      if (isLived) {
+        btn.classList.remove('from-gold-600', 'to-gold-500');
+        btn.classList.add('from-ruby-700', 'to-ruby-600', 'text-parchment-100');
+        txt.textContent = 'Fuego Spanda vivo hoy ✓';
+      } else {
+        btn.classList.add('from-gold-600', 'to-gold-500');
+        btn.classList.remove('from-ruby-700', 'to-ruby-600', 'text-parchment-100');
+        txt.textContent = 'He encarnado esta práctica hoy';
+      }
+    }
+
+    function markLivedToday() {
+      const today = new Date().toISOString().split('T')[0];
+      if (practiceStreak.lastDate === today) {
+        showToast('El fuego ya ha sido encendido hoy con plena consciencia.', '🔥');
+        return;
+      }
+
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+      if (practiceStreak.lastDate === yesterdayStr) {
+        practiceStreak.count += 1;
+      } else {
+        practiceStreak.count = 1;
+      }
+
+      practiceStreak.lastDate = today;
+      try {
+        localStorage.setItem(STORAGE_KEY_STREAK, JSON.stringify(practiceStreak));
+      } catch (e) {}
+
+      updateStreakDisplay();
+      checkIfLivedToday();
+      ringDoorChime(528);
+      showToast('Fuego Spanda encendido: Que la pulsación viva guíe tus actos.', '🔥');
+    }
+
+    function updateStreakDisplay() {
+      const el = document.getElementById('streak-counter');
+      const c = practiceStreak.count || 0;
+      el.textContent = `${c} ${c === 1 ? 'fuego' : 'fuegos'}`;
+    }
+
+    function shareDharana() {
+      const txt = `*${currentDharana.source}*\n"${currentDharana.sanskrit}"\n\nSignificado:\n${currentDharana.translation}\n\nPráctica Tántrica Viva:\n${currentDharana.practice}\n\n— TANTRA · SPANDA (El Tejido del Reconocimiento Vivo)`;
+      copyToClipboard(txt);
+      showToast('Dhāraṇā copiada al portapapeles.', '📋');
+    }
+
+    function copyToClipboard(str) {
+      const temp = document.createElement('textarea');
+      temp.value = str;
+      temp.style.position = 'fixed';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      try { document.execCommand('copy'); } catch (e) { console.error(e); }
+      document.body.removeChild(temp);
+    }
+
+    /* =====================================================================
+       ALQUIMIA DE CONTRACCIÓN (SAṄKOCA → VIKĀSA)
+       ===================================================================== */
+    let currentAlcStep = 1;
+
+    function setAlchemyStep(step) {
+      currentAlcStep = step;
+      document.getElementById('alc-step-1').classList.toggle('hidden', step !== 1);
+      document.getElementById('alc-step-2').classList.toggle('hidden', step !== 2);
+      document.getElementById('alc-step-3').classList.toggle('hidden', step !== 3);
+
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`alc-step-btn-${i}`);
+        if (i === step) {
+          btn.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-gold-500 text-gold-400";
+        } else {
+          btn.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-parchment-400";
+        }
+      }
+
+      if (step === 3) {
+        const bodySens = document.getElementById('alc-input-body').value.trim() || "Sensación física reconocida";
+        document.getElementById('alc-summary-text').innerHTML = `
+          Has tomado la contracción: <em>"${escapeHtml(bodySens)}"</em>.<br>
+          Al retirar el relato mental de queja o culpa, ha dejado de ser veneno y se ha convertido en pura Śakti (energía viva). Descansas en el Corazón abierto (*Vikāsa*).
+        `;
+      }
+    }
+
+    function setRawSens(txt) {
+      document.getElementById('alc-input-body').value = txt;
+    }
+
+    function saveAlchemyEntry() {
+      const raw = document.getElementById('alc-input-body').value.trim();
+      const strip = document.getElementById('alc-input-strip').value.trim();
+
+      if (!raw) {
+        showToast('Escribe primero la sensación corporal que sientes.', '⚠️');
+        setAlchemyStep(1);
+        return;
+      }
+
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        situation: "Alquimia Saṅkoca a Vikāsa",
+        seal: "Homa (Alquimia / Ofrenda)",
+        raw: raw,
+        insight: strip || "He entregado la contracción al fuego del Corazón y reposo en la Consciencia infinita.",
+        sourceRef: "Pratyabhijñāhṛdaya 18"
+      };
+
+      tantraEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(tantraEntries));
+      } catch (e) {}
+
+      renderTantraEntries();
+      ringDoorChime(528);
+      showToast('Alquimia consagrada en el Diario.', '🔱');
+      
+      document.getElementById('alc-input-body').value = '';
+      setAlchemyStep(1);
+      switchTab('journal');
+    }
+
+    /* =====================================================================
+       MEDITACIÓN EN LOS UMBRALES (SANDHI DHYĀNA)
+       ===================================================================== */
+    let sandhiInterval = null;
+    let isSandhiActive = false;
+    let sandhiTick = 0;
+    let sandhiCycles = 0;
+
+    // Fases en segundos: Inhalar (4s) -> Sandhi Lleno (4s) -> Exhalar (5s) -> Sandhi Vacío (3s) = Total 16s
+    const SANDHI_PHASES = [
+      { name: "Inhalación", dur: 4, scale: 1.5, text: "Prāṇa ascendente hacia el centro" },
+      { name: "Sandhi Interno", dur: 4, scale: 1.5, text: "Pausa en el Corazón · Reposo inmóvil" },
+      { name: "Exhalación", dur: 5, scale: 0.85, text: "Apāna descendente soltando todo límite" },
+      { name: "Sandhi Externo", dur: 3, scale: 0.85, text: "Pausa en el Vacío · Consciencia sin objetos" }
+    ];
+
+    function toggleSandhiSession() {
+      const btn = document.getElementById('sandhi-start-btn');
+      if (isSandhiActive) {
+        clearInterval(sandhiInterval);
+        isSandhiActive = false;
+        btn.textContent = 'Iniciar Práctica';
+        btn.classList.remove('from-ruby-700', 'to-ruby-600');
+        btn.classList.add('from-gold-600', 'to-gold-500');
+        resetSandhiVisuals();
+      } else {
+        isSandhiActive = true;
+        btn.textContent = 'Detener / Reposar';
+        btn.classList.add('from-ruby-700', 'to-ruby-600');
+        btn.classList.remove('from-gold-600', 'to-gold-500');
+        startSandhiLoop();
+      }
+    }
+
+    function resetSandhiVisuals() {
+      const orb = document.getElementById('sandhi-orb');
+      orb.style.transform = 'scale(1)';
+      document.getElementById('sandhi-phase').textContent = 'Centro';
+      document.getElementById('sandhi-counter').textContent = '0s';
+      document.getElementById('sandhi-instruction').textContent = 'Presiona Iniciar para sincronizar el aliento';
+    }
+
+    function startSandhiLoop() {
+      const totalDur = SANDHI_PHASES.reduce((acc, p) => acc + p.dur, 0); // 16s
+      sandhiTick = 0;
+
+      ringDoorChime(396);
+
+      const runStep = () => {
+        const currentSec = sandhiTick % totalDur;
+        const orb = document.getElementById('sandhi-orb');
+        const phaseTxt = document.getElementById('sandhi-phase');
+        const countTxt = document.getElementById('sandhi-counter');
+        const instrTxt = document.getElementById('sandhi-instruction');
+
+        let accumulated = 0;
+        let activePhase = SANDHI_PHASES[0];
+        let secInPhase = 0;
+
+        for (let i = 0; i < SANDHI_PHASES.length; i++) {
+          const p = SANDHI_PHASES[i];
+          if (currentSec >= accumulated && currentSec < accumulated + p.dur) {
+            activePhase = p;
+            secInPhase = currentSec - accumulated + 1;
+            break;
+          }
+          accumulated += p.dur;
+        }
+
+        phaseTxt.textContent = activePhase.name;
+        countTxt.textContent = `${secInPhase}s`;
+        instrTxt.textContent = activePhase.text;
+
+        // Animación suave del orbe
+        orb.style.transform = `scale(${activePhase.scale})`;
+
+        // Toques sonoros en los umbrales
+        if (currentSec === 0) ringDoorChime(432); // Inicia inhalar
+        if (currentSec === 4) ringDoorChime(528); // Sandhi interno
+        if (currentSec === 8) ringDoorChime(396); // Inicia exhalar
+        if (currentSec === 13) ringDoorChime(216); // Sandhi externo
+
+        sandhiTick++;
+        if (sandhiTick % totalDur === 0) {
+          sandhiCycles++;
+          document.getElementById('sandhi-cycle-count').textContent = `Ciclos completados: ${sandhiCycles}`;
+        }
+      };
+
+      runStep();
+      sandhiInterval = setInterval(runStep, 1000);
+    }
+
+    /* =====================================================================
+       SÍNTESIS NATIVA EN TIEMPO REAL: TANPURA Y CAMPANA ZEN (WEB AUDIO API)
+       ===================================================================== */
+    let audioCtx = null;
+    let isTanpuraPlaying = false;
+    let tanpuraTimer = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Campana armónica de bronce
+    function ringDoorChime(freq = 432) {
+      try {
+        initAudioContext();
+        const now = audioCtx.currentTime;
+
+        const partials = [
+          { f: freq * 1.0, g: 0.35, d: 5.0 },
+          { f: freq * 2.76, g: 0.16, d: 3.5 },
+          { f: freq * 5.40, g: 0.08, d: 2.0 }
+        ];
+
+        partials.forEach(p => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(p.f, now);
+          osc.frequency.linearRampToValueAtTime(p.f + 0.3, now + p.d);
+
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(p.g, now + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + p.d);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now);
+          osc.stop(now + p.d);
+        });
+      } catch (e) {
+        console.warn('Audio contextual restringido por navegador:', e);
+      }
+    }
+
+    // Síntesis de Tanpura (4 cuerdas clásicas: Pa, Sa alto, Sa alto, Sa bajo)
+    // Frecuencias base en afinación C# (138.59 Hz)
+    const TANPURA_STRINGS = [
+      { f: 196.00, gain: 0.15, dur: 3.2 }, // 1. Pa (Sol)
+      { f: 261.63, gain: 0.20, dur: 3.5 }, // 2. Sa agudo
+      { f: 262.20, gain: 0.20, dur: 3.5 }, // 3. Sa agudo con batimiento Jawari
+      { f: 130.81, gain: 0.28, dur: 4.8 }  // 4. Sa grave Kharaj
+    ];
+
+    function pluckTanpuraString(index) {
+      if (!isTanpuraPlaying || !audioCtx) return;
+      try {
+        const now = audioCtx.currentTime;
+        const str = TANPURA_STRINGS[index];
+
+        const osc = audioCtx.createOscillator();
+        const filter = audioCtx.createBiquadFilter();
+        const gain = audioCtx.createGain();
+
+        // Onda rica en armónicos filtrada para imitar cuerda de bronce sobre puente de hueso
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(str.f, now);
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1400, now);
+        filter.frequency.exponentialRampToValueAtTime(350, now + str.dur);
+
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(str.gain, now + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + str.dur);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + str.dur);
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    function toggleTanpuraSound() {
+      initAudioContext();
+      isTanpuraPlaying = !isTanpuraPlaying;
+
+      const qIcon = document.getElementById('tanpura-icon');
+      const qText = document.getElementById('tanpura-btn-text');
+      const sBtn = document.getElementById('sandhi-tanpura-btn');
+
+      if (isTanpuraPlaying) {
+        qIcon.textContent = '🔊';
+        qText.textContent = 'Pausar';
+        sBtn.classList.add('bg-gold-500/20', 'text-gold-400');
+        showToast('Tanpura cósmica activada en segundo plano.', '🪕');
+
+        let currentStr = 0;
+        const cycle = () => {
+          if (!isTanpuraPlaying) return;
+          pluckTanpuraString(currentStr);
+          currentStr = (currentStr + 1) % TANPURA_STRINGS.length;
+          tanpuraTimer = setTimeout(cycle, 1200); // Rasgueo cada 1.2 segundos
+        };
+        cycle();
+      } else {
+        clearTimeout(tanpuraTimer);
+        qIcon.textContent = '🪕';
+        qText.textContent = 'Tanpura';
+        sBtn.classList.remove('bg-gold-500/20', 'text-gold-400');
+        showToast('Tanpura pausada.');
+      }
+    }
+
+    /* =====================================================================
+       DIARIO DE RECONOCIMIENTO (PRATYABHIJÑĀ)
+       ===================================================================== */
+    function saveTantraEntryManual() {
+      const situation = document.getElementById('tantra-situation').value.trim();
+      const raw = document.getElementById('tantra-raw').value.trim();
+      const insight = document.getElementById('tantra-insight').value.trim();
+      const seal = document.getElementById('tantra-seal').value;
+
+      if (!situation && !raw && !insight) {
+        showToast('Por favor escribe al menos una observación o reconocimiento.', '⚠️');
+        return;
+      }
+
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        situation: situation || 'Momento cotidiano de auto-observación',
+        seal: seal,
+        raw: raw || 'Sensación corporal neutra y atestiguada',
+        insight: insight || 'Descanso en la pura mirada neutral que atestigua todo con amor.',
+        sourceRef: currentDharana ? currentDharana.source : ''
+      };
+
+      tantraEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(tantraEntries));
+      } catch (e) {}
+
+      document.getElementById('tantra-situation').value = '';
+      document.getElementById('tantra-raw').value = '';
+      document.getElementById('tantra-insight').value = '';
+
+      renderTantraEntries();
+      ringDoorChime(432);
+      showToast('Ofrenda guardada en el Diario del Fuego Interior.', '🔱');
+    }
+
+    function renderTantraEntries() {
+      const container = document.getElementById('journal-entries-container');
+      const search = (document.getElementById('journal-search')?.value || '').toLowerCase();
+
+      const filtered = tantraEntries.filter(entry => {
+        return (
+          entry.situation.toLowerCase().includes(search) ||
+          entry.raw.toLowerCase().includes(search) ||
+          entry.insight.toLowerCase().includes(search) ||
+          entry.seal.toLowerCase().includes(search)
+        );
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 border border-dashed border-obsidian-700 rounded-3xl p-8 tantra-card">
+            <div class="text-3xl mb-2 text-gold-500/50">🔱</div>
+            <h4 class="font-cinzel text-base font-bold text-parchment-200">El Altar está Despejado</h4>
+            <p class="text-xs text-parchment-400 max-w-sm mx-auto mt-1">
+              No hay ofrendas registradas aún. Utiliza el formulario superior o el Laboratorio de Alquimia para consagrar tus momentos de lucidez.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const d = new Date(item.date);
+        const dateStr = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+        return `
+          <div class="tantra-card rounded-2xl p-5 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-obsidian-700/80 pb-2">
+              <div class="flex items-center space-x-2">
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-obsidian-850 border border-gold-500/30 text-gold-400 font-cinzel font-semibold">${escapeHtml(item.seal)}</span>
+                ${item.sourceRef ? `<span class="text-[11px] font-cinzel text-ruby-400">${escapeHtml(item.sourceRef)}</span>` : ''}
+              </div>
+              <div class="flex items-center space-x-2 text-xs text-parchment-400">
+                <span>${dateStr}</span>
+                <button onclick="deleteTantraEntry('${item.id}')" class="hover:text-ruby-400 p-1" title="Retirar ofrenda">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="text-sm font-semibold text-parchment-100">
+              <span class="text-xs uppercase tracking-wider text-parchment-400 block font-normal">Momento:</span>
+              ${escapeHtml(item.situation)}
+            </div>
+
+            <div class="text-xs text-ruby-300 bg-ruby-950/20 p-3 rounded-xl border border-ruby-900/40">
+              <span class="font-bold block mb-0.5 text-ruby-400">Contracción o energía cruda atestiguada:</span>
+              ${escapeHtml(item.raw)}
+            </div>
+
+            <div class="text-xs text-parchment-200 bg-obsidian-850/90 p-3 rounded-xl border border-gold-500/30">
+              <span class="font-bold block mb-0.5 text-gold-400">Reconocimiento Luminoso (*Pratyabhijñā*):</span>
+              ${escapeHtml(item.insight)}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function deleteTantraEntry(id) {
+      tantraEntries = tantraEntries.filter(e => e.id !== id);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(tantraEntries));
+      } catch (e) {}
+      renderTantraEntries();
+      showToast('Ofrenda retirada del registro.');
+    }
+
+    function exportTantraJSON() {
+      if (tantraEntries.length === 0) {
+        showToast('No hay entradas para exportar.', 'ℹ️');
+        return;
+      }
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(tantraEntries, null, 2));
+      const dl = document.createElement('a');
+      dl.setAttribute("href", dataStr);
+      dl.setAttribute("download", `tantra_spanda_diario_${new Date().toISOString().split('T')[0]}.json`);
+      document.body.appendChild(dl);
+      dl.click();
+      dl.remove();
+      showToast('Archivo JSON descargado.', '💾');
+    }
+
+    function exportTantraTXT() {
+      if (tantraEntries.length === 0) {
+        showToast('No hay entradas para exportar.', 'ℹ️');
+        return;
+      }
+      let content = "=========================================================\n";
+      content += "  TANTRA · SPANDA (EL DIARIO DEL RECONOCIMIENTO VIVO)\n";
+      content += "=========================================================\n\n";
+
+      tantraEntries.forEach((e, idx) => {
+        content += `[Entrada ${idx + 1}] — ${new Date(e.date).toLocaleString()}\n`;
+        content += `Sello: ${e.seal}\n`;
+        if (e.sourceRef) content += `Referencia: ${e.sourceRef}\n`;
+        content += `Situación: ${e.situation}\n`;
+        content += `Contracción: ${e.raw}\n`;
+        content += `Reconocimiento: ${e.insight}\n`;
+        content += "---------------------------------------------------------\n\n";
+      });
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const dl = document.createElement('a');
+      dl.href = url;
+      dl.download = `tantra_spanda_ofrendas_${new Date().toISOString().split('T')[0]}.txt`;
+      document.body.appendChild(dl);
+      dl.click();
+      document.body.removeChild(dl);
+      URL.revokeObjectURL(url);
+      showToast('Ofrendas descargadas en formato texto.', '📄');
+    }
+
+    /* =====================================================================
+       COMPENDIO DE DHĀRAṆĀS
+       ===================================================================== */
+    function filterCompendium(cat) {
+      currentCompFilter = cat;
+      document.querySelectorAll('.comp-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-gold-500/40 bg-gold-500 text-obsidian-950";
+        } else {
+          btn.className = "comp-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-obsidian-700 text-parchment-300 hover:border-gold-500/40";
+        }
+      });
+      renderCompendium();
+    }
+
+    function searchCompendium() {
+      renderCompendium();
+    }
+
+    function renderCompendium() {
+      const container = document.getElementById('compendium-grid');
+      const search = (document.getElementById('comp-search-box')?.value || '').toLowerCase();
+
+      const filtered = DHARANAS_DATA.filter(d => {
+        const matchesCat = currentCompFilter === 'all' || d.category === currentCompFilter;
+        const matchesSearch = d.source.toLowerCase().includes(search) ||
+                              d.sanskrit.toLowerCase().includes(search) ||
+                              d.translation.toLowerCase().includes(search) ||
+                              d.insight.toLowerCase().includes(search) ||
+                              d.practice.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
+
+      container.innerHTML = filtered.map(d => {
+        return `
+          <div class="tantra-card rounded-3xl p-6 flex flex-col justify-between space-y-4 border border-obsidian-700 hover:border-gold-500/50 transition">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md font-cinzel text-xs font-bold bg-obsidian-850 text-gold-400 border border-gold-500/30">
+                  ${escapeHtml(d.source)}
+                </span>
+                <span class="text-[10px] uppercase font-cinzel tracking-wider text-parchment-400">
+                  ${escapeHtml(d.title)}
+                </span>
+              </div>
+
+              <h3 class="font-serif text-lg font-bold text-parchment-100 italic">
+                ${escapeHtml(d.sanskrit)}
+              </h3>
+              <p class="text-xs text-gold-400 font-medium">
+                «${escapeHtml(d.translation)}»
+              </p>
+              <p class="text-xs text-parchment-300 leading-relaxed pt-1">
+                ${escapeHtml(d.insight)}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-obsidian-700 flex items-center justify-between gap-2">
+              <div class="text-[11px] text-ruby-300 truncate flex-1 font-medium">
+                ⚡ <strong>Práctica:</strong> ${escapeHtml(d.practice)}
+              </div>
+              <button onclick="setDharanaById('${d.id}')" class="px-3 py-1.5 rounded-xl bg-obsidian-850 hover:bg-gold-500 hover:text-obsidian-950 text-xs font-cinzel font-semibold text-parchment-200 transition border border-obsidian-700 hover:border-gold-500">
+                Encarnar hoy
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    /* =====================================================================
+       MODAL DE OFRENDA RÁPIDA
+       ===================================================================== */
+    function openTantraNoteModal() {
+      document.getElementById('modal-dharana-ref').textContent = `Inspirado en ${currentDharana.source}: "${currentDharana.translation}"`;
+      document.getElementById('modal-quick-text').value = '';
+      document.getElementById('modal-note').classList.remove('hidden');
+    }
+
+    function closeTantraNoteModal() {
+      document.getElementById('modal-note').classList.add('hidden');
+    }
+
+    function saveModalTantraNote() {
+      const val = document.getElementById('modal-quick-text').value.trim();
+      if (!val) {
+        showToast('Escribe unas palabras para tu ofrenda.', '⚠️');
+        return;
+      }
+
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        situation: `Contemplación: ${currentDharana.source}`,
+        seal: "Samāveśa (Inmersión Plena)",
+        raw: "Pausa consciente y recogimiento",
+        insight: val,
+        sourceRef: currentDharana.source
+      };
+
+      tantraEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(tantraEntries));
+      } catch (e) {}
+
+      renderTantraEntries();
+      closeTantraNoteModal();
+      ringDoorChime(528);
+      showToast('Ofrenda guardada en el Diario.', '🔱');
+    }
+
+    /* =====================================================================
+       UTILIDADES
+       ===================================================================== */
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initApp();
+      // Inicializar tab activa visualmente
+      document.getElementById('nav-daily')?.classList.add('tab-active');
+      document.getElementById('mob-nav-daily')?.classList.add('tab-active');
+    });
+  </script>
+</body>
+</html>
